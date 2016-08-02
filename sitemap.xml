@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/08/01/Linux-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2016-08-02T01:31:45.672Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2016-07-31T09:02:09.091Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2016-07-31T08:55:35.071Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/07/31/hello-world/</loc>
-    
-    <lastmod>2016-07-31T01:43:46.068Z</lastmod>
     
   </url>
   

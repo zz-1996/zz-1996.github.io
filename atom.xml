@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-31T01:43:46.068Z</updated>
+  <updated>2016-08-02T01:31:45.672Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,29 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/07/31/hello-world/"/>
-    <id>http://yoursite.com/2016/07/31/hello-world/</id>
-    <published>2016-07-31T01:43:25.240Z</published>
-    <updated>2016-07-31T01:43:46.068Z</updated>
+    <title>Linux 基础命令</title>
+    <link href="http://yoursite.com/2016/08/01/Linux-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2016/08/01/Linux-基础命令/</id>
+    <published>2016-08-01T12:15:11.000Z</published>
+    <updated>2016-08-02T01:31:45.672Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <content type="html"><![CDATA[<p>ls：列出目录的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ls -l directoryname：显示directoryname里文件的详细信息，当没有directoryname时，显示当前所在的目录</div><div class="line">ls -h directoryname：做单位转换,和-l一块使用，也就是ls -lh directoryname</div><div class="line">ls -a directoryname：可以显示全部文件，包括隐藏文件，其中 . 代表当前目录， .. 代表父目录</div><div class="line">ls -A directoryname：和 -a 一样，但不显示“ . 和 .. ”</div><div class="line">ls -d directoryname：显示当前所在目录的的名字，如果没有directoryname，则显示为 .</div><div class="line">ls -i directoryname：显示每个文件和对用inode号</div><div class="line">ls -r directoryname: 逆序输出</div><div class="line">ls -R directoryname：递归显示</div></pre></td></tr></table></figure></p>
+<p>cd：改变目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd directoryname：进入到directoryname这个目录（~代表当前用户的家目录）</div><div class="line">cd ~username：进入到username的家目录</div><div class="line">cd —：进入上一次所在的目录</div><div class="line">cd ：进入当前目录的家目录</div></pre></td></tr></table></figure></p>
+<p>cat：合并文件和打印到标准输出（查看文件内容）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat filename：显示filename中的内容（filename可以有多个，中间用空格隔开）</div></pre></td></tr></table></figure></p>
+<p>type：显示命令类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">type command：显示command的类型（内部命令或者外部命令）</div></pre></td></tr></table></figure></p>
+<p>获取命令帮助：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">外部命令：command --help</div><div class="line">内部命令：help command</div><div class="line">命令手册：man command</div><div class="line">命令的功能简要说明：whatis command</div><div class="line">在线文档：info command</div></pre></td></tr></table></figure></p>
+<p>man：命令手册<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">man command内容大概有：</div><div class="line">    NAME：命令名称及功能简要说明</div><div class="line">    SYNOPSIS：用法说明，包括可用的选项</div><div class="line">    DESCRIPTION：命令功能的详尽说明，可能包括每一个选项的意义</div><div class="line">    OPTIONS：说明每一个选项的意义</div><div class="line">    FILES：此命令相关的配置文件</div><div class="line">    EXAMPLES：使用示例</div><div class="line">    SEE ALSO：另外参照</div></pre></td></tr></table></figure></p>
+<p>date和cal（日历）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">date: 显示当前时间</div><div class="line">cal [[day] [month] [year]]： 显示日历</div></pre></td></tr></table></figure></p>
+<p>echo:输出文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo -e:开启逃逸字符</div><div class="line">ehco -E：关闭逃逸字符（默认）</div></pre></td></tr></table></figure></p>
+<p>file<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file filename/directoryname：确定filename/directoryname的类型</div></pre></td></tr></table></figure></p>
+<p>install：复制文件和设置属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">install -d directoryname：创建目录</div><div class="line">inatall -t src dest：复制文件</div></pre></td></tr></table></figure></p>
+<p>查看文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cat：如上文</div><div class="line">tac：倒序输出</div><div class="line">less：可以分屏查看长文件</div><div class="line">more：可以分屏查看长文件</div><div class="line">head -#：#代表数字，可以查看前#行</div><div class="line">tail -#：可以查看后#行</div></pre></td></tr></table></figure></p>
+<p>pwd：显示当前的绝对路径<br>mkdir directoryname：创建目录<br>rmdir directoryname：删除目录<br>cp src dest：复制文件，-r可以赋值目录<br>mv src dest：移动文件</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      Linux 基础命令
     
     </summary>
     
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
   </entry>
   
