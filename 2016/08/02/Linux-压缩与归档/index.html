@@ -2,8 +2,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,9 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="Linux 压缩与归档">
   
-  <title>分类: Linux [ For Light's Blog ]</title>
+  <title>Linux  压缩与归档 [ For Light's Blog ]</title>
   
     <link rel="alternate" href="/atom.xml" title="For Light's Blog">
   
@@ -41,6 +39,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2016/08/01/Linux-基础命令/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Linux 基础命令
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -80,7 +87,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/categories">Categories</a>
             
@@ -112,135 +119,170 @@
     <div id="content-inner">
       
       
-  <article id="page">
-    
+  <article id="post">
+    <h1>Linux  压缩与归档</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2016-08-02</span>
       
-        <h1 class="center-title">
-          分类
-          
-        </h1>
+        <span id = "post-title-updated">修改于 2016-08-02</span>
       
-    
-    <ul class="category-list">
       
-        <li class="category-list-item">
-        
-          <a class="active" href="/categories/Linux/">Linux</a>
-        
-          <span class="category-list-count">2</span>
-        </li>
-      
-    </ul>
-    
+      <span id = "post-title-categories">分类
       
       
         
-          
         
+        <a href="/categories/Linux/">Linux</a>
+      
+      </span>
       
       
-      <div class="post-title-item">
-  
-  <a href="/2016/08/02/Linux-压缩与归档/">
-  
-    Linux  压缩与归档
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-2</span>
-    
-    <span id = "post-title-categories">分类
-    
-    
-      
-      
-      <a href="/categories/Linux/">Linux</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/Linux/">Linux</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/压缩/">压缩</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/归档/">归档</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
+      <span id = "post-title-tags">
+      标签
       
       
         
-          
         
+        <a href="/tags/Linux/">Linux</a>
       
+        
+          /
+        
+        
+        <a href="/tags/压缩/">压缩</a>
       
-      <div class="post-title-item">
-  
-  <a href="/2016/08/01/Linux-基础命令/">
-  
-    Linux 基础命令
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-1</span>
-    
-    <span id = "post-title-categories">分类
-    
-    
+        
+          /
+        
+        
+        <a href="/tags/归档/">归档</a>
       
+      </span>
       
-      <a href="/categories/Linux/">Linux</a>
+    </p>
     
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/Linux/">Linux</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
+    <h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h4><h5 id="压缩之-gz"><a href="#压缩之-gz" class="headerlink" title="压缩之.gz"></a>压缩之.gz</h5><ol>
+<li>gzip<ul>
+<li>使用方法<ul>
+<li>gzip somefile：压缩完成后会删除原文件（不能压缩目录）</li>
+<li>gzip -# somefile：按指定压缩比压缩文件，#（1-9）</li>
+<li>gzip -d filename.gz: 解压文件（解压后会删除原文件）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>gunzip<ul>
+<li>使用方法<ul>
+<li>gunzip filename.gz:解压文件并删除原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>zcat<ul>
+<li>使用方法<ul>
+<li>zcat filename.gz: 查看压缩文件的内容  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="压缩之-bz2"><a href="#压缩之-bz2" class="headerlink" title="压缩之.bz2"></a>压缩之.bz2</h5><ol>
+<li>bzip2<ul>
+<li>使用方法<ul>
+<li>bzip2 somefile：压缩完成后会删除原文件（不能压缩目录）</li>
+<li>bzip2 -# somefile：按指定压缩比压缩文件，#（1-9）</li>
+<li>bzip2 -d filename.bz2: 解压文件（解压后会删除原文件）</li>
+<li>bzip2 -k filename: 保留原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bunzip2<ul>
+<li>使用方法<ul>
+<li>bunzip2 filename.bz2:解压文件并删除原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bzcat<ul>
+<li>使用方法<ul>
+<li>bzcat filename.bz2: 查看压缩文件的内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="压缩之-xz"><a href="#压缩之-xz" class="headerlink" title="压缩之.xz"></a>压缩之.xz</h5><ol>
+<li>xz<ul>
+<li>使用方法<ul>
+<li>xz somefile：压缩完成后会删除原文件（不能压缩目录）</li>
+<li>xz -# somefile：按指定压缩比压缩文件，#（1-9）</li>
+<li>xz -d filename.xz：解压文件（解压后会删除原文件）</li>
+<li>xz -k filename：保留原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>unxz<ul>
+<li>使用方法<ul>
+<li>unxz filename.xz：解压文件并删除原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>xzcat<ul>
+<li>使用方法<ul>
+<li>xzcat filename.xz：查看压缩文件的内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h4><ul>
+<li>tar<ul>
+<li>使用方法<ul>
+<li>tar -c：创建归档文件</li>
+<li>tar -f file.tar：操作归档文件</li>
+<li>tar -x：展开归档</li>
+<li>tar –xattrs：归档时，保留文件的扩展属性信息</li>
+<li>tar -t：不展开归档，直接查看归档了哪些文件</li>
+<li>tar -zcf filename.tar.gz filename：归档文件，然后用gzip压缩</li>
+<li>tar -zxf filename.tar.gz：调用gzip解压并展开归档，-z选项可以省略</li>
+<li>tar -jcf filename.tar.bz2 filename：归档文件，然后用bzip2压缩</li>
+<li>tar -jxf filename.tar.bz2：调用bzip2解压并展开归档，-j选项可以省略</li>
+<li>tar -Jcf filename.tar.xz filename：归档文件，然后用xz压缩</li>
+<li>tar -Jxf filename.tar.xz：调用xz解压并展开归档，-J选项可以省略</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#压缩"><span class="toc-text">压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#压缩之-gz"><span class="toc-text">压缩之.gz</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#压缩之-bz2"><span class="toc-text">压缩之.bz2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#压缩之-xz"><span class="toc-text">压缩之.xz</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#归档"><span class="toc-text">归档</span></a></li></ol>
+  </div>
+</div>
 
   
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2016/08/01/Linux-基础命令/" class="next">下一篇 Linux 基础命令 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -376,6 +418,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "D7CCC8";

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-02T01:31:45.672Z</updated>
+  <updated>2016-08-02T15:47:25.422Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,128 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux  压缩与归档</title>
+    <link href="http://yoursite.com/2016/08/02/Linux-%E5%8E%8B%E7%BC%A9%E4%B8%8E%E5%BD%92%E6%A1%A3/"/>
+    <id>http://yoursite.com/2016/08/02/Linux-压缩与归档/</id>
+    <published>2016-08-02T08:53:02.000Z</published>
+    <updated>2016-08-02T15:47:25.422Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h4><h5 id="压缩之-gz"><a href="#压缩之-gz" class="headerlink" title="压缩之.gz"></a>压缩之.gz</h5><ol>
+<li>gzip<ul>
+<li>使用方法<ul>
+<li>gzip somefile：压缩完成后会删除原文件（不能压缩目录）</li>
+<li>gzip -# somefile：按指定压缩比压缩文件，#（1-9）</li>
+<li>gzip -d filename.gz: 解压文件（解压后会删除原文件）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>gunzip<ul>
+<li>使用方法<ul>
+<li>gunzip filename.gz:解压文件并删除原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>zcat<ul>
+<li>使用方法<ul>
+<li>zcat filename.gz: 查看压缩文件的内容  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="压缩之-bz2"><a href="#压缩之-bz2" class="headerlink" title="压缩之.bz2"></a>压缩之.bz2</h5><ol>
+<li>bzip2<ul>
+<li>使用方法<ul>
+<li>bzip2 somefile：压缩完成后会删除原文件（不能压缩目录）</li>
+<li>bzip2 -# somefile：按指定压缩比压缩文件，#（1-9）</li>
+<li>bzip2 -d filename.bz2: 解压文件（解压后会删除原文件）</li>
+<li>bzip2 -k filename: 保留原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bunzip2<ul>
+<li>使用方法<ul>
+<li>bunzip2 filename.bz2:解压文件并删除原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bzcat<ul>
+<li>使用方法<ul>
+<li>bzcat filename.bz2: 查看压缩文件的内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="压缩之-xz"><a href="#压缩之-xz" class="headerlink" title="压缩之.xz"></a>压缩之.xz</h5><ol>
+<li>xz<ul>
+<li>使用方法<ul>
+<li>xz somefile：压缩完成后会删除原文件（不能压缩目录）</li>
+<li>xz -# somefile：按指定压缩比压缩文件，#（1-9）</li>
+<li>xz -d filename.xz：解压文件（解压后会删除原文件）</li>
+<li>xz -k filename：保留原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>unxz<ul>
+<li>使用方法<ul>
+<li>unxz filename.xz：解压文件并删除原文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>xzcat<ul>
+<li>使用方法<ul>
+<li>xzcat filename.xz：查看压缩文件的内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h4><ul>
+<li>tar<ul>
+<li>使用方法<ul>
+<li>tar -c：创建归档文件</li>
+<li>tar -f file.tar：操作归档文件</li>
+<li>tar -x：展开归档</li>
+<li>tar –xattrs：归档时，保留文件的扩展属性信息</li>
+<li>tar -t：不展开归档，直接查看归档了哪些文件</li>
+<li>tar -zcf filename.tar.gz filename：归档文件，然后用gzip压缩</li>
+<li>tar -zxf filename.tar.gz：调用gzip解压并展开归档，-z选项可以省略</li>
+<li>tar -jcf filename.tar.bz2 filename：归档文件，然后用bzip2压缩</li>
+<li>tar -jxf filename.tar.bz2：调用bzip2解压并展开归档，-j选项可以省略</li>
+<li>tar -Jcf filename.tar.xz filename：归档文件，然后用xz压缩</li>
+<li>tar -Jxf filename.tar.xz：调用xz解压并展开归档，-J选项可以省略</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      Linux 压缩与归档
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="压缩" scheme="http://yoursite.com/tags/%E5%8E%8B%E7%BC%A9/"/>
+    
+      <category term="归档" scheme="http://yoursite.com/tags/%E5%BD%92%E6%A1%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 基础命令</title>
