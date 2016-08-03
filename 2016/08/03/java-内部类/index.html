@@ -1,28 +1,167 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>For Light&#39;s Blog</title>
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="/atom.xml" rel="self"/>
+  <meta name="author" content="zhao">
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-08-03T05:46:09.816Z</updated>
-  <id>http://yoursite.com/</id>
   
-  <author>
-    <name>zhao</name>
+  
+  
+    <meta name="description" content="java 内部类的用法">
+  
+  <title>java 内部类 [ For Light's Blog ]</title>
+  
+    <link rel="alternate" href="/atom.xml" title="For Light's Blog">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2016/08/02/Linux-压缩与归档/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Linux  压缩与归档
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="https://unsplash.it/200/300/?gravity=east"/>
+          <div id="homelink">For Light's Blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/zz-1996">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>java 内部类</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2016-08-03</span>
+      
+        <span id = "post-title-updated">修改于 2016-08-03</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/java/">java</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/java/">java</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/内部类/">内部类</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/匿名内部类/">匿名内部类</a>
+      
+      </span>
+      
+    </p>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>java 内部类</title>
-    <link href="http://yoursite.com/2016/08/03/java-%E5%86%85%E9%83%A8%E7%B1%BB/"/>
-    <id>http://yoursite.com/2016/08/03/java-内部类/</id>
-    <published>2016-08-03T01:57:57.000Z</published>
-    <updated>2016-08-03T05:46:09.816Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h4><p>内部类顾名思义，就是在一个类中定义的类,如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outter</span></span>&#123;</div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</div><div class="line">    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+    <h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h4><p>内部类顾名思义，就是在一个类中定义的类,如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outter</span></span>&#123;</div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</div><div class="line">    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>用法：</p>
 <ul>
 <li>创建内部类对象时，要用外部类的对象来创建。<br>要想创建inner对象，必须先创建outter对象，具体方法如下：</li>
@@ -44,179 +183,210 @@
 <p>上面为下面的简化形式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Test</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">a</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Abc</span> <span class="keyword">implements</span> <span class="title">Test</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outter</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> Test <span class="title">test</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Abc();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test2</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Outter out = <span class="keyword">new</span> Outter();</div><div class="line">		Test t = out.test();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果在匿名内部类中要直接使用外围类中的参数，那么此参数必须定义为final类型，如果不是直接使用，不用定义成final类型，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;&#125;</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> A <span class="title">a</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">final</span> <span class="keyword">int</span> m,<span class="keyword">final</span> <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">    	<span class="keyword">return</span> <span class="keyword">new</span> A(x)&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</div><div class="line">        	System.out.println(<span class="string">"sum="</span>+(m+n));</div><div class="line">        &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      java 内部类的用法
-    
-    </summary>
-    
-      <category term="java" scheme="http://yoursite.com/categories/java/"/>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-      <category term="内部类" scheme="http://yoursite.com/tags/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
-    
-      <category term="匿名内部类" scheme="http://yoursite.com/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/"/>
-    
-  </entry>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#内部类"><span class="toc-text">内部类</span></a></li></ol>
+  </div>
+</div>
+
   
-  <entry>
-    <title>Linux  压缩与归档</title>
-    <link href="http://yoursite.com/2016/08/02/Linux-%E5%8E%8B%E7%BC%A9%E4%B8%8E%E5%BD%92%E6%A1%A3/"/>
-    <id>http://yoursite.com/2016/08/02/Linux-压缩与归档/</id>
-    <published>2016-08-02T08:53:02.000Z</published>
-    <updated>2016-08-02T15:47:25.422Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h4><h5 id="压缩之-gz"><a href="#压缩之-gz" class="headerlink" title="压缩之.gz"></a>压缩之.gz</h5><ol>
-<li>gzip<ul>
-<li>使用方法<ul>
-<li>gzip somefile：压缩完成后会删除原文件（不能压缩目录）</li>
-<li>gzip -# somefile：按指定压缩比压缩文件，#（1-9）</li>
-<li>gzip -d filename.gz: 解压文件（解压后会删除原文件）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>gunzip<ul>
-<li>使用方法<ul>
-<li>gunzip filename.gz:解压文件并删除原文件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>zcat<ul>
-<li>使用方法<ul>
-<li>zcat filename.gz: 查看压缩文件的内容  </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h5 id="压缩之-bz2"><a href="#压缩之-bz2" class="headerlink" title="压缩之.bz2"></a>压缩之.bz2</h5><ol>
-<li>bzip2<ul>
-<li>使用方法<ul>
-<li>bzip2 somefile：压缩完成后会删除原文件（不能压缩目录）</li>
-<li>bzip2 -# somefile：按指定压缩比压缩文件，#（1-9）</li>
-<li>bzip2 -d filename.bz2: 解压文件（解压后会删除原文件）</li>
-<li>bzip2 -k filename: 保留原文件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>bunzip2<ul>
-<li>使用方法<ul>
-<li>bunzip2 filename.bz2:解压文件并删除原文件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>bzcat<ul>
-<li>使用方法<ul>
-<li>bzcat filename.bz2: 查看压缩文件的内容</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h5 id="压缩之-xz"><a href="#压缩之-xz" class="headerlink" title="压缩之.xz"></a>压缩之.xz</h5><ol>
-<li>xz<ul>
-<li>使用方法<ul>
-<li>xz somefile：压缩完成后会删除原文件（不能压缩目录）</li>
-<li>xz -# somefile：按指定压缩比压缩文件，#（1-9）</li>
-<li>xz -d filename.xz：解压文件（解压后会删除原文件）</li>
-<li>xz -k filename：保留原文件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>unxz<ul>
-<li>使用方法<ul>
-<li>unxz filename.xz：解压文件并删除原文件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>xzcat<ul>
-<li>使用方法<ul>
-<li>xzcat filename.xz：查看压缩文件的内容</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h4><ul>
-<li>tar<ul>
-<li>使用方法<ul>
-<li>tar -c：创建归档文件</li>
-<li>tar -f file.tar：操作归档文件</li>
-<li>tar -x：展开归档</li>
-<li>tar –xattrs：归档时，保留文件的扩展属性信息</li>
-<li>tar -t：不展开归档，直接查看归档了哪些文件</li>
-<li>tar -zcf filename.tar.gz filename：归档文件，然后用gzip压缩</li>
-<li>tar -zxf filename.tar.gz：调用gzip解压并展开归档，-z选项可以省略</li>
-<li>tar -jcf filename.tar.bz2 filename：归档文件，然后用bzip2压缩</li>
-<li>tar -jxf filename.tar.bz2：调用bzip2解压并展开归档，-j选项可以省略</li>
-<li>tar -Jcf filename.tar.xz filename：归档文件，然后用xz压缩</li>
-<li>tar -Jxf filename.tar.xz：调用xz解压并展开归档，-J选项可以省略</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      Linux 压缩与归档
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-      <category term="压缩" scheme="http://yoursite.com/tags/%E5%8E%8B%E7%BC%A9/"/>
-    
-      <category term="归档" scheme="http://yoursite.com/tags/%E5%BD%92%E6%A1%A3/"/>
-    
-  </entry>
+<nav id="pagination">
   
-  <entry>
-    <title>Linux 基础命令</title>
-    <link href="http://yoursite.com/2016/08/01/Linux-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2016/08/01/Linux-基础命令/</id>
-    <published>2016-08-01T12:15:11.000Z</published>
-    <updated>2016-08-02T01:31:45.672Z</updated>
-    
-    <content type="html"><![CDATA[<p>ls：列出目录的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ls -l directoryname：显示directoryname里文件的详细信息，当没有directoryname时，显示当前所在的目录</div><div class="line">ls -h directoryname：做单位转换,和-l一块使用，也就是ls -lh directoryname</div><div class="line">ls -a directoryname：可以显示全部文件，包括隐藏文件，其中 . 代表当前目录， .. 代表父目录</div><div class="line">ls -A directoryname：和 -a 一样，但不显示“ . 和 .. ”</div><div class="line">ls -d directoryname：显示当前所在目录的的名字，如果没有directoryname，则显示为 .</div><div class="line">ls -i directoryname：显示每个文件和对用inode号</div><div class="line">ls -r directoryname: 逆序输出</div><div class="line">ls -R directoryname：递归显示</div></pre></td></tr></table></figure></p>
-<p>cd：改变目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd directoryname：进入到directoryname这个目录（~代表当前用户的家目录）</div><div class="line">cd ~username：进入到username的家目录</div><div class="line">cd —：进入上一次所在的目录</div><div class="line">cd ：进入当前目录的家目录</div></pre></td></tr></table></figure></p>
-<p>cat：合并文件和打印到标准输出（查看文件内容）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat filename：显示filename中的内容（filename可以有多个，中间用空格隔开）</div></pre></td></tr></table></figure></p>
-<p>type：显示命令类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">type command：显示command的类型（内部命令或者外部命令）</div></pre></td></tr></table></figure></p>
-<p>获取命令帮助：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">外部命令：command --help</div><div class="line">内部命令：help command</div><div class="line">命令手册：man command</div><div class="line">命令的功能简要说明：whatis command</div><div class="line">在线文档：info command</div></pre></td></tr></table></figure></p>
-<p>man：命令手册<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">man command内容大概有：</div><div class="line">    NAME：命令名称及功能简要说明</div><div class="line">    SYNOPSIS：用法说明，包括可用的选项</div><div class="line">    DESCRIPTION：命令功能的详尽说明，可能包括每一个选项的意义</div><div class="line">    OPTIONS：说明每一个选项的意义</div><div class="line">    FILES：此命令相关的配置文件</div><div class="line">    EXAMPLES：使用示例</div><div class="line">    SEE ALSO：另外参照</div></pre></td></tr></table></figure></p>
-<p>date和cal（日历）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">date: 显示当前时间</div><div class="line">cal [[day] [month] [year]]： 显示日历</div></pre></td></tr></table></figure></p>
-<p>echo:输出文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">echo -e:开启逃逸字符</div><div class="line">ehco -E：关闭逃逸字符（默认）</div></pre></td></tr></table></figure></p>
-<p>file<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file filename/directoryname：确定filename/directoryname的类型</div></pre></td></tr></table></figure></p>
-<p>install：复制文件和设置属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">install -d directoryname：创建目录</div><div class="line">inatall -t src dest：复制文件</div></pre></td></tr></table></figure></p>
-<p>查看文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">cat：如上文</div><div class="line">tac：倒序输出</div><div class="line">less：可以分屏查看长文件</div><div class="line">more：可以分屏查看长文件</div><div class="line">head -#：#代表数字，可以查看前#行</div><div class="line">tail -#：可以查看后#行</div></pre></td></tr></table></figure></p>
-<p>pwd：显示当前的绝对路径<br>mkdir directoryname：创建目录<br>rmdir directoryname：删除目录<br>cp src dest：复制文件，-r可以赋值目录<br>mv src dest：移动文件</p>
-]]></content>
-    
-    <summary type="html">
-    
-      Linux 基础命令
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
-    
-  </entry>
+
   
-</feed>
+
+  
+    <a href="/2016/08/02/Linux-压缩与归档/" class="next">下一篇 Linux  压缩与归档 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by zhao using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="https://unsplash.it/200/300/?gravity=east">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/zz-1996">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com">
+        
+          <i class="icon iconfont douban">&#xe609;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "D7CCC8";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
