@@ -57,7 +57,7 @@
       <div id="brand">
         
         <a onClick="openUserCard()">
-          <img id="avatar" src="https://unsplash.it/200/300/?gravity=east"/>
+          <img id="avatar" src=""/>
           <div id="homelink">For Light's Blog</div>
         </a>
       </div>
@@ -122,12 +122,12 @@
   <article id="post">
     <h1>java 字符串</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2016-08-09</span>
+      <span id = "post-title-date">撰写于 2016-08-09</span>
       
-        <span id = "post-title-updated">Updated at 2016-08-09</span>
+        <span id = "post-title-updated">修改于 2016-08-09</span>
       
       
-      <span id = "post-title-categories">Category
+      <span id = "post-title-categories">分类
       
       
         
@@ -138,7 +138,7 @@
       
       
       <span id = "post-title-tags">
-      Tag
+      标签
       
       
         
@@ -197,10 +197,10 @@
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
-    <h2>Table of Content</h2>
+    <h2>目录</h2>
     <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#String"><span class="toc-text">String</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#StringBuffer"><span class="toc-text">StringBuffer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#StringBuilder"><span class="toc-text">StringBuilder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String、StringBuffer和StringBuilder的区别"><span class="toc-text">String、StringBuffer和StringBuilder的区别</span></a></li></ol>
   </div>
 </div>
@@ -212,7 +212,7 @@
   
 
   
-    <a href="/2016/08/03/java-内部类/" class="next">Next post java 内部类 &rarr;</a>
+    <a href="/2016/08/03/java-内部类/" class="next">下一篇 java 内部类 &rarr;</a>
   
 </nav>
 
@@ -243,7 +243,7 @@
 
 <div id="user-card">
   <div class="center-field">
-    <img class="avatar" src="https://unsplash.it/200/300/?gravity=east">
+    <img class="avatar" src="">
     <p id="description"></p>
     <ul class="social-icon">
   
@@ -335,6 +335,18 @@ var isTriggerAnalytics = !( true && isIgnoreHost );
 
   // fancybox
   var backgroundImages = [];
+  
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_2.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_3.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_4.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_5.jpg?imageView2/1/w/__width__/h/__height__');
+    
   
   $('#post').each(function(i){
     $(this).find('img').each(function(){
