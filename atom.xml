@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-09T05:33:41.084Z</updated>
+  <updated>2016-08-13T03:34:52.296Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 基础语法</title>
+    <link href="http://yoursite.com/2016/08/13/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/08/13/Python-基础语法/</id>
+    <published>2016-08-13T03:34:02.000Z</published>
+    <updated>2016-08-13T03:34:52.296Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Python基础语法"><a href="#Python基础语法" class="headerlink" title="Python基础语法"></a>Python基础语法</h4><ul>
+<li>多行语句，python一般以一行的开头作为语句的结束符，但是也可以使用\将一行语句显示为多行，例：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">test = i + \</div><div class="line">	   b + \</div><div class="line">       c </div><div class="line">test2 = [<span class="string">"a"</span>, <span class="string">"b"</span>, </div><div class="line">	     <span class="string">"c"</span>, <span class="string">"d"</span>]</div></pre></td></tr></table></figure>
+<ul>
+<li>单引号，双引号和三引号，三引号支持编写多行文本</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">w = <span class="string">'word'</span></div><div class="line">s = <span class="string">"sentence"</span></div><div class="line">p = <span class="string">""" pakj</span></div><div class="line">sjdlk"""</div></pre></td></tr></table></figure>
+<ul>
+<li>注释，单行注释用#，多行注释用三个单引号或三个双引号</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#单行注释</span></div><div class="line"></div><div class="line"><span class="string">'''</span></div><div class="line">多行</div><div class="line">注释</div><div class="line">'''</div><div class="line"></div><div class="line"><span class="string">"""</span></div><div class="line">多行</div><div class="line">注释</div><div class="line">"""</div></pre></td></tr></table></figure>
+<p>python也可以在同一行使用多条语句，语句之间用；分割（和shell脚本类似）</p>
+<h4 id="Python基本数据类型"><a href="#Python基本数据类型" class="headerlink" title="Python基本数据类型"></a>Python基本数据类型</h4><ul>
+<li>python中的变量赋值不需要类型声明，但每个变量在使用之前一定要先赋值，变量赋值以后才会被创建</li>
+<li>python允许同时为多个变量赋值，例：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = b = c = <span class="number">1</span></div><div class="line">d, e, f = <span class="number">1</span>, <span class="string">'abcd'</span>, <span class="number">3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>python 有五个标准数据类型，为：<ul>
+<li>Number（数字）</li>
+<li>String（字符串）</li>
+<li>List （列表）</li>
+<li>Tuple （元组）</li>
+<li>Dictionary（字典）</li>
+</ul>
+</li>
+</ul>
+<h6 id="Python数字类型"><a href="#Python数字类型" class="headerlink" title="Python数字类型"></a>Python数字类型</h6><ul>
+<li>python支持四种不同的数字类型：<ul>
+<li>int（有符号整形）</li>
+<li>long（长整形）</li>
+<li>float（浮点型）</li>
+<li>complex（复数）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>长整形后面要跟l或者L，推荐使用L，以免和数字1分不清楚</li>
+<li>复数是由实数部分和虚数部分构成，可以是a+bj，或者complex（a，b）表示，a和b都是浮点型。</li>
+</ul>
+<h6 id="Python字符串类型"><a href="#Python字符串类型" class="headerlink" title="Python字符串类型"></a>Python字符串类型</h6><ul>
+<li>字符串是由“”或‘’括起来的一串字符</li>
+<li>python的字符串列表有2种取值顺序：<ul>
+<li>从左到右索引默认0开始的，最大范围是字符串长度少1</li>
+<li>从右到左索引默认-1开始，最大范围字符串开头<br>截取字符串可以用变量名[头下标：尾下标]，表示从头下标开始到尾下标-1的字符串，例如：str=’abcdefg’,b=str[1:4],则b输出为bcd；还有可以使用*#(#代表数字)，来输出#次字符串；也可用+来连接运算符。</li>
+</ul>
+</li>
+</ul>
+<h6 id="Python列表类型"><a href="#Python列表类型" class="headerlink" title="Python列表类型"></a>Python列表类型</h6><p>python中的列表可以完成大多数集合类的数据结构实现，它支持字符，数字，字符串甚至可以包含列表（嵌套）。<br>和字符串的大多数操作类似，例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">list = [<span class="string">'abcd'</span>, <span class="number">333</span>, <span class="number">2.3</span>, <span class="string">'hello'</span>]</div><div class="line">list2 = [<span class="number">666</span>, <span class="string">'world'</span>]</div><div class="line"></div><div class="line"><span class="keyword">print</span> list <span class="comment">#输出完整的列表</span></div><div class="line"><span class="keyword">print</span> list[<span class="number">0</span>] <span class="comment">#输出列表的第一个元素</span></div><div class="line"><span class="keyword">print</span> list[<span class="number">1</span>:<span class="number">3</span>] <span class="comment">#输出第二个到第三个元素</span></div><div class="line"><span class="keyword">print</span> list[<span class="number">2</span>:]  <span class="comment">#输出第三个开始到最后一个</span></div><div class="line"><span class="keyword">print</span> list2 * <span class="number">2</span>  <span class="comment">#输出list2列表两次</span></div><div class="line"><span class="keyword">print</span> list + list2  <span class="comment">#打印组合列表</span></div></pre></td></tr></table></figure>
+<h6 id="Python元组类型"><a href="#Python元组类型" class="headerlink" title="Python元组类型"></a>Python元组类型</h6><ul>
+<li>元组相当于只读类型的列表，元组用（）标识，不能二次赋值。</li>
+<li>元组的其他操作和列表类似</li>
+</ul>
+<h6 id="Python元字典类型"><a href="#Python元字典类型" class="headerlink" title="Python元字典类型"></a>Python元字典类型</h6><ul>
+<li>字典中存入的是键值对，用{}来标识字典，字典是无序的对象集合，列表是有序的对象结合，例：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">dict = &#123;&#125;</div><div class="line">dict [<span class="string">'one'</span>] = <span class="string">"this is one"</span></div><div class="line">dict[<span class="number">2</span>] = <span class="string">"this is two"</span></div><div class="line"></div><div class="line">dict2 = &#123;<span class="string">'name'</span> : <span class="string">'zhao'</span>, <span class="string">'code'</span> : <span class="number">333</span>, <span class="string">'dept'</span> : <span class="string">'sales'</span>&#125;</div><div class="line"></div><div class="line"><span class="keyword">print</span> dict[<span class="string">'one'</span>]</div><div class="line"><span class="keyword">print</span> dict[<span class="number">2</span>]</div><div class="line"><span class="keyword">print</span> dict</div><div class="line"><span class="keyword">print</span> dict2</div><div class="line"><span class="keyword">print</span> dict2.keys() <span class="comment">#输出所有的键</span></div><div class="line"><span class="keyword">print</span> dict2.values() <span class="comment">#输出所以的值</span></div></pre></td></tr></table></figure>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">this <span class="keyword">is</span> one</div><div class="line">this <span class="keyword">is</span> two</div><div class="line">&#123;<span class="number">2</span>: <span class="string">'this is two'</span>, <span class="string">'one'</span>: <span class="string">'this is one'</span>&#125;</div><div class="line">&#123;<span class="string">'dept'</span>: <span class="string">'sales'</span>, <span class="string">'code'</span>: <span class="number">333</span>, <span class="string">'name'</span>: <span class="string">'zhao'</span>&#125;</div><div class="line">[<span class="string">'dept'</span>, <span class="string">'code'</span>, <span class="string">'name'</span>]</div><div class="line">[<span class="string">'sales'</span>, <span class="number">333</span>, <span class="string">'zhao'</span>]</div></pre></td></tr></table></figure></p>
+<h5 id="Python数据类型转换"><a href="#Python数据类型转换" class="headerlink" title="Python数据类型转换"></a>Python数据类型转换</h5><ul>
+<li>对内置数据类型转换，只需将数据类型作为函数名即可，例如：</li>
+</ul>
+<ol>
+<li>int(x):将x转换为整数</li>
+<li>long(x):将x转换为长整形</li>
+<li>float(x):将x转换为浮点数</li>
+<li>complex(real):创建一个复数</li>
+<li>str(x):将对象x转换成字符串</li>
+<li>repr(x)将x转换为表达式字符串</li>
+<li>tuple(s):将序列s转换为元组</li>
+<li>list(s):将序列s转化为列表</li>
+<li>set(s):转换为可变集合</li>
+<li>dict(d):创建字典，d必须是一个序列(key,value)元组</li>
+<li>frozenset(s):转换为不可变集合</li>
+<li>chr(x):将一个整数转换为一个字符</li>
+<li>ord(x):将一个字符转换为他的整数</li>
+<li>hex(x):将一个整数转换为一个十六进制的字符串</li>
+<li>oct(x):将一个整数转换为一个八进制字符串</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      Python学习之路-基础
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="Python基础" scheme="http://yoursite.com/tags/Python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>java 字符串</title>
