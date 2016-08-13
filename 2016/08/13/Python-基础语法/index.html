@@ -122,12 +122,12 @@
   <article id="post">
     <h1>Python 基础语法</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">撰写于 2016-08-13</span>
+      <span id = "post-title-date">Created at 2016-08-13</span>
       
-        <span id = "post-title-updated">修改于 2016-08-13</span>
+        <span id = "post-title-updated">Updated at 2016-08-13</span>
       
       
-      <span id = "post-title-categories">分类
+      <span id = "post-title-categories">Category
       
       
         
@@ -138,7 +138,7 @@
       
       
       <span id = "post-title-tags">
-      标签
+      Tag
       
       
         
@@ -170,11 +170,11 @@
 <p>python也可以在同一行使用多条语句，语句之间用；分割（和shell脚本类似）</p>
 <h4 id="Python基本数据类型"><a href="#Python基本数据类型" class="headerlink" title="Python基本数据类型"></a>Python基本数据类型</h4><ul>
 <li>python中的变量赋值不需要类型声明，但每个变量在使用之前一定要先赋值，变量赋值以后才会被创建</li>
-<li>python允许同时为多个变量赋值，例：</li>
-</ul>
+<li><p>python允许同时为多个变量赋值，例：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = b = c = <span class="number">1</span></div><div class="line">d, e, f = <span class="number">1</span>, <span class="string">'abcd'</span>, <span class="number">3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>python 有五个标准数据类型，为：</p>
 <ul>
-<li>python 有五个标准数据类型，为：<ul>
 <li>Number（数字）</li>
 <li>String（字符串）</li>
 <li>List （列表）</li>
@@ -235,14 +235,104 @@
 <li>hex(x):将一个整数转换为一个十六进制的字符串</li>
 <li>oct(x):将一个整数转换为一个八进制字符串</li>
 </ol>
+<p>####Python运算符</p>
+<ul>
+<li>Python 算术运算符<ul>
+<li>+：两个对象相加</li>
+<li>-：两个对象相减</li>
+<li>*：两个数想乘，或是返回一个被重复若干次的字符串</li>
+<li>/：两个对象相除</li>
+<li>%：取模</li>
+<li>**：幂运算，a**b相当于a^b</li>
+<li>//: 取整除，返回商的整数部分,9//2=4，3.3//1.1=2.0</li>
+</ul>
+</li>
+<li>Python成员运算符<ul>
+<li>in ：如果在指定的序列中找到则返回Ture</li>
+<li>not in：如果在指定序列中没有找到则返回True</li>
+</ul>
+</li>
+<li>Python身份运算符<ul>
+<li>is：is是判断两个标识符是不是引用自一个对象，如：x is y，如果id(x)等于id(y)，is返回结果1</li>
+<li>is not：和上面返回结果相反</li>
+</ul>
+</li>
+</ul>
+<h4 id="Python条件语句"><a href="#Python条件语句" class="headerlink" title="Python条件语句"></a>Python条件语句</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 判断条件：</div><div class="line">	执行语句……</div><div class="line"><span class="keyword">else</span>：</div><div class="line">	执行语句……</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 判断条件：</div><div class="line">	执行语句……</div><div class="line"><span class="keyword">elif</span> 判断条件：</div><div class="line">	执行语句……</div><div class="line"><span class="keyword">else</span>：</div><div class="line">	执行语句……</div></pre></td></tr></table></figure>
+<p>####Python循环语句</p>
+<ul>
+<li><p>while循环</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> 判断条件：</div><div class="line">	执行语句……</div></pre></td></tr></table></figure>
+</li>
+<li><p>for循环</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> iterating_var <span class="keyword">in</span> sequence:</div><div class="line">	statements(s)</div></pre></td></tr></table></figure>
+</li>
+<li><p>循环中使用else语句<br>在Python中，for/while……else表示这样的意思，循环中的语句和普通的没有区别，else中的语句会在循环正常执行完（既循环不是通过break跳出而中断的）的情况下执行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">c = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> c&lt;<span class="number">5</span>:</div><div class="line">	<span class="keyword">print</span> c,<span class="string">"is less than 5"</span></div><div class="line">    c+=c;</div><div class="line"><span class="keyword">else</span>:</div><div class="line">	<span class="keyword">print</span> c,<span class="string">"is not less than 5"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span> <span class="keyword">is</span> less than <span class="number">5</span></div><div class="line"><span class="number">1</span> <span class="keyword">is</span> less than <span class="number">5</span></div><div class="line"><span class="number">2</span> <span class="keyword">is</span> less than <span class="number">5</span></div><div class="line"><span class="number">3</span> <span class="keyword">is</span> less than <span class="number">5</span></div><div class="line"><span class="number">4</span> <span class="keyword">is</span> less than <span class="number">5</span></div><div class="line"><span class="number">5</span> <span class="keyword">is</span> <span class="keyword">not</span> less than <span class="number">5</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>break<br>break的用法和c语言一样，用来终止循环</p>
+</li>
+<li><p>continue<br>continue的用法和c语言也一样，用来跳出当前循环，然后继续执行下一轮循环</p>
+</li>
+</ul>
+<h4 id="Python-pass语句"><a href="#Python-pass语句" class="headerlink" title="Python pass语句"></a>Python pass语句</h4><ul>
+<li>python pass 是空语句，是为了保持程序结构的完整性</li>
+<li>pass 不做任何事，一般只做占位语句<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">'python'</span>:</div><div class="line">   <span class="keyword">if</span> letter == <span class="string">'h'</span>:</div><div class="line">      <span class="keyword">pass</span></div><div class="line">      <span class="keyword">print</span> <span class="string">'这是 pass 块'</span></div><div class="line">   <span class="keyword">print</span> <span class="string">'当前字母 :'</span>, letter</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">当前字母 : P</div><div class="line">当前字母 : y</div><div class="line">当前字母 : t</div><div class="line">这是 <span class="keyword">pass</span> 块</div><div class="line">当前字母 : h</div><div class="line">当前字母 : o</div><div class="line">当前字母 : n</div></pre></td></tr></table></figure></p>
+<h4 id="Python数学函数"><a href="#Python数学函数" class="headerlink" title="Python数学函数"></a>Python数学函数</h4><ol>
+<li>abs(x)    返回数字的绝对值，如abs(-10) 返回 10</li>
+<li>ceil(x)    返回数字的上入整数，如math.ceil(4.1) 返回 5</li>
+<li>cmp(x, y)    如果 x &lt; y 返回 -1, 如果 x == y 返回 0, 如果 x &gt; y 返回 1</li>
+<li>exp(x)    返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045</li>
+<li>fabs(x)    返回数字的绝对值，如math.fabs(-10) 返回10.0</li>
+<li>floor(x)    返回数字的下舍整数，如math.floor(4.9)返回 4</li>
+<li>log(x)    如math.log(math.e)返回1.0,math.log(100,10)返回2.0</li>
+<li>log10(x)    返回以10为基数的x的对数，如math.log10(100)返回 2.0</li>
+<li>max(x1, x2,…)    返回给定参数的最大值，参数可以为序列。</li>
+<li>min(x1, x2,…)    返回给定参数的最小值，参数可以为序列。</li>
+<li>modf(x)    返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。</li>
+<li>pow(x, y)    x**y 运算后的值。</li>
+<li>round(x [,n])    返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数。</li>
+<li>sqrt(x)    返回数字x的平方根，数字可以为负数，返回类型为实数，如math.sqrt(4)返回 2+0j</li>
+</ol>
+<h4 id="Python随机函数"><a href="#Python随机函数" class="headerlink" title="Python随机函数"></a>Python随机函数</h4><ol>
+<li>choice(seq)    从序列的元素中随机挑选一个元素，比如random.choice(range(10))，从0到9中随机挑选一个整数。</li>
+<li>randrange ([start,] stop [,step])    从指定范围内，按指定基数递增的集合中获取一个随机数，基数缺省值为1</li>
+<li>random()    随机生成下一个实数，它在[0,1)范围内。</li>
+<li>seed([x])    改变随机数生成器的种子seed。如果你不了解其原理，你不必特别去设定seed，Python会帮你选择seed。</li>
+<li>shuffle(lst)    将序列的所有元素随机排序</li>
+<li>uniform(x, y)    随机生成下一个实数，它在[x,y]范围内。</li>
+</ol>
+<h4 id="Python三角函数"><a href="#Python三角函数" class="headerlink" title="Python三角函数"></a>Python三角函数</h4><ol>
+<li>acos(x)    返回x的反余弦弧度值。</li>
+<li>asin(x)    返回x的反正弦弧度值。    </li>
+<li>atan(x)    返回x的反正切弧度值。</li>
+<li>atan2(y, x)    返回给定的 X 及 Y 坐标值的反正切值。</li>
+<li>cos(x)    返回x的弧度的余弦值。</li>
+<li>hypot(x, y)    返回欧几里德范数 sqrt(x<em>x + y</em>y)。</li>
+<li>sin(x)    返回的x弧度的正弦值。</li>
+<li>tan(x)    返回x弧度的正切值。</li>
+<li>degrees(x)    将弧度转换为角度,如degrees(math.pi/2) ， 返回90.0</li>
+<li>radians(x)    将角度转换为弧度</li>
+</ol>
+<h4 id="Python数学常量"><a href="#Python数学常量" class="headerlink" title="Python数学常量"></a>Python数学常量</h4><ol>
+<li>pi    数学常量 pi（圆周率，一般以π来表示）</li>
+<li>e    数学常量 e，e即自然常数（自然常数）</li>
+</ol>
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python基础语法"><span class="toc-text">Python基础语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python基本数据类型"><span class="toc-text">Python基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Python数字类型"><span class="toc-text">Python数字类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python字符串类型"><span class="toc-text">Python字符串类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python列表类型"><span class="toc-text">Python列表类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python元组类型"><span class="toc-text">Python元组类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python元字典类型"><span class="toc-text">Python元字典类型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python数据类型转换"><span class="toc-text">Python数据类型转换</span></a></li></ol></li></ol>
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python基础语法"><span class="toc-text">Python基础语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python基本数据类型"><span class="toc-text">Python基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Python数字类型"><span class="toc-text">Python数字类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python字符串类型"><span class="toc-text">Python字符串类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python列表类型"><span class="toc-text">Python列表类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python元组类型"><span class="toc-text">Python元组类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Python元字典类型"><span class="toc-text">Python元字典类型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python数据类型转换"><span class="toc-text">Python数据类型转换</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python条件语句"><span class="toc-text">Python条件语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-pass语句"><span class="toc-text">Python pass语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python数学函数"><span class="toc-text">Python数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python随机函数"><span class="toc-text">Python随机函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python三角函数"><span class="toc-text">Python三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python数学常量"><span class="toc-text">Python数学常量</span></a></li></ol>
   </div>
 </div>
 
@@ -253,7 +343,7 @@
   
 
   
-    <a href="/2016/08/09/java-字符串/" class="next">下一篇 java 字符串 &rarr;</a>
+    <a href="/2016/08/09/java-字符串/" class="next">Next post java 字符串 &rarr;</a>
   
 </nav>
 
