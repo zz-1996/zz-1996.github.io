@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-14T01:17:23.864Z</updated>
+  <updated>2016-08-14T02:41:27.862Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>touch 之修改文件时间</title>
+    <link href="http://yoursite.com/2016/08/14/touch-%E4%B9%8B%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4/"/>
+    <id>http://yoursite.com/2016/08/14/touch-之修改文件时间/</id>
+    <published>2016-08-14T01:35:39.000Z</published>
+    <updated>2016-08-14T02:41:27.862Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="touch命令之修改文件时间"><a href="#touch命令之修改文件时间" class="headerlink" title="touch命令之修改文件时间"></a>touch命令之修改文件时间</h4><ul>
+<li>文件主要有三个时间，分别为：<ul>
+<li>modification time（mtime）<ul>
+<li>当该文件的内容数据更改时，这个时间就会更新</li>
+</ul>
+</li>
+<li>status time（ctime）<ul>
+<li>当该文件的状态改变时，也就是权限、属性等状态改变时，这个时间就会更新</li>
+</ul>
+</li>
+<li>access time（atime）<ul>
+<li>当该文件的内容被读取时，这个时间就会更新</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>查看文件的这三个时间戳可以使用stat命令</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[zz@VM_60_195_centos ~]$ stat a</div><div class="line">  File: &apos;a&apos;</div><div class="line">  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file</div><div class="line">Device: fd01h/64769d	Inode: 278621      Links: 1</div><div class="line">Access: (0664/-rw-rw-r--)  Uid: ( 1000/      zz)   Gid: ( 1000/      zz)</div><div class="line">Access: 2016-08-14 10:29:51.895696976 +0800</div><div class="line">Modify: 2016-08-14 10:29:51.895696976 +0800</div><div class="line">Change: 2016-08-14 10:29:51.895696976 +0800</div><div class="line"> Birth: -</div></pre></td></tr></table></figure>
+<p>其中，Access表示atime，也就是内容被读取的时间，Modify表示mtime，也就是内容被修改的时间，Change表示ctime，也就是该文件状态改变的时间</p>
+<ul>
+<li>用touch命令修改这三个时间<ul>
+<li>touch -a ：修改访问时间</li>
+<li>touch -c ：仅修改文件时间，若该文件不存在则不创建新文件</li>
+<li>touch -d ：后面可以接欲修改的日期而不是当前的日期，也可以用–date=“日期或时间”</li>
+<li>touch -m ：仅修改mtime</li>
+<li>touch -t ：后面可以接欲修改的时间而不用目前时间，格式为[YYMMDDhhmm]</li>
+</ul>
+</li>
+<li><p>用touch命令修改访问时间（atime）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[zz@VM_60_195_centos ~]$ touch -a -t 1502020202 a</div><div class="line">[zz@VM_60_195_centos ~]$ stat a</div><div class="line">  File: &apos;a&apos;</div><div class="line">  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file</div><div class="line">Device: fd01h/64769d	Inode: 278621      Links: 1</div><div class="line">Access: (0664/-rw-rw-r--)  Uid: ( 1000/      zz)   Gid: ( 1000/      zz)</div><div class="line">Access: 2015-02-02 02:02:00.000000000 +0800</div><div class="line">Modify: 2016-08-14 10:29:51.895696976 +0800</div><div class="line">Change: 2016-08-14 10:32:32.261166992 +0800</div><div class="line"> Birth: -</div></pre></td></tr></table></figure>
+</li>
+<li><p>用touch命令修改mtime（修改时间）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[zz@VM_60_195_centos ~]$ touch -m -t 1302020202 a</div><div class="line">[zz@VM_60_195_centos ~]$ stat a</div><div class="line">  File: &apos;a&apos;</div><div class="line">  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file</div><div class="line">Device: fd01h/64769d	Inode: 278621      Links: 1</div><div class="line">Access: (0664/-rw-rw-r--)  Uid: ( 1000/      zz)   Gid: ( 1000/      zz)</div><div class="line">Access: 2015-02-02 02:02:00.000000000 +0800</div><div class="line">Modify: 2013-02-02 02:02:00.000000000 +0800</div><div class="line">Change: 2016-08-14 10:36:16.105408279 +0800</div><div class="line"> Birth: -</div></pre></td></tr></table></figure>
+</li>
+<li><p>用touch命令同时修改atime和mtime：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[zz@VM_60_195_centos ~]$ touch -c -t 1602020202 a</div><div class="line">[zz@VM_60_195_centos ~]$ stat a</div><div class="line">  File: &apos;a&apos;</div><div class="line">  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file</div><div class="line">Device: fd01h/64769d	Inode: 278621      Links: 1</div><div class="line">Access: (0664/-rw-rw-r--)  Uid: ( 1000/      zz)   Gid: ( 1000/      zz)</div><div class="line">Access: 2016-02-02 02:02:00.000000000 +0800</div><div class="line">Modify: 2016-02-02 02:02:00.000000000 +0800</div><div class="line">Change: 2016-08-14 10:37:36.636446310 +0800</div><div class="line"> Birth: -</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      touch命令之修改文件时间
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="touch" scheme="http://yoursite.com/tags/touch/"/>
+    
+  </entry>
   
   <entry>
     <title>Python 基础语法</title>
