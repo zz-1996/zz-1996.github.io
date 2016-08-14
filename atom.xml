@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-08-13T13:15:35.423Z</updated>
+  <updated>2016-08-14T01:17:23.864Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/08/13/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2016/08/13/Python-基础语法/</id>
     <published>2016-08-13T03:34:02.000Z</published>
-    <updated>2016-08-13T13:15:35.423Z</updated>
+    <updated>2016-08-14T01:17:23.864Z</updated>
     
     <content type="html"><![CDATA[<h4 id="Python基础语法"><a href="#Python基础语法" class="headerlink" title="Python基础语法"></a>Python基础语法</h4><ul>
 <li>多行语句，python一般以一行的开头作为语句的结束符，但是也可以使用\将一行语句显示为多行，例：</li>
@@ -102,8 +102,7 @@
 <li>hex(x):将一个整数转换为一个十六进制的字符串</li>
 <li>oct(x):将一个整数转换为一个八进制字符串</li>
 </ol>
-<p>####Python运算符</p>
-<ul>
+<h4 id="Python运算符"><a href="#Python运算符" class="headerlink" title="Python运算符"></a>Python运算符</h4><ul>
 <li>Python 算术运算符<ul>
 <li>+：两个对象相加</li>
 <li>-：两个对象相减</li>
@@ -127,8 +126,7 @@
 </ul>
 <h4 id="Python条件语句"><a href="#Python条件语句" class="headerlink" title="Python条件语句"></a>Python条件语句</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 判断条件：</div><div class="line">	执行语句……</div><div class="line"><span class="keyword">else</span>：</div><div class="line">	执行语句……</div></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> 判断条件：</div><div class="line">	执行语句……</div><div class="line"><span class="keyword">elif</span> 判断条件：</div><div class="line">	执行语句……</div><div class="line"><span class="keyword">else</span>：</div><div class="line">	执行语句……</div></pre></td></tr></table></figure>
-<p>####Python循环语句</p>
-<ul>
+<h4 id="Python循环语句"><a href="#Python循环语句" class="headerlink" title="Python循环语句"></a>Python循环语句</h4><ul>
 <li><p>while循环</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> 判断条件：</div><div class="line">	执行语句……</div></pre></td></tr></table></figure>
 </li>
