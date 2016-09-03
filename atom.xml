@@ -53,6 +53,186 @@
   </entry>
   
   <entry>
+    <title>python学习笔记-1</title>
+    <link href="http://yoursite.com/2016/08/15/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/"/>
+    <id>http://yoursite.com/2016/08/15/python学习笔记-1/</id>
+    <published>2016-08-15T02:59:21.000Z</published>
+    <updated>2016-09-03T04:48:04.641Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Python学习笔记"><a href="#Python学习笔记" class="headerlink" title="Python学习笔记"></a>Python学习笔记</h4><ul>
+<li>print的用法<ul>
+<li>print ‘hello world’  打印hello world</li>
+<li>还有和C语言的printf()很像的语法，用%来实现字符串的替换功能，例如：print “%s is number %d”%(‘Python’,1)输出为Python is number one</li>
+<li>print也支持将输出重定向到文件中，用&gt;&gt;符号来实现,例如：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">logfile = open(<span class="string">'E:/Python/log/mylog.txt'</span>,<span class="string">'a'</span>)</div><div class="line"><span class="keyword">print</span> &gt;&gt; logfile, <span class="string">'Fatal error : invalid input !'</span></div><div class="line">logfile.close()</div></pre></td></tr></table></figure>
+<p>将Fatal error : invalid input !输入到E:/Python/log/目录下的mylog.txt文件中。</p>
+<ul>
+<li>程序的输入<ul>
+<li>使用raw_input()内建函数完成输入</li>
+<li>输入的内容为字符串格式</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user = raw_input(<span class="string">'Enter login name:'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">'you login is:'</span>,user</div></pre></td></tr></table></figure>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter login name:jock</div><div class="line">you login <span class="keyword">is</span>: jock</div></pre></td></tr></table></figure></p>
+<p>也可以输入数字，只不过要将输入的字符串类型转换为数字类型，如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">num = raw_input(<span class="string">'please input a number:'</span>)</div><div class="line"><span class="keyword">print</span> <span class="string">'Double your number:%d'</span>%(int(num)*<span class="number">2</span>)</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">please input a number:<span class="number">3</span></div><div class="line">Double your number:<span class="number">6</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>注释<ul>
+<li>Python添加注释的方法和shell脚本的添加注释方法相同，使用#开头，一直到行末的内容都为注释</li>
+</ul>
+</li>
+<li>文档字符串<ul>
+<li>在函数体的第一行，可以使用双引号(“)添加单行的文档字符串，也可以使用三个单引号(‘’’)或三个双引号(“””)来添加多行文档字符串</li>
+<li>文档字符串的开头一般用大写字母开头，以.结束，如果有多行，则第二行为空行，第三行开始详细描述</li>
+<li>文档字符串可以是我们更好的理解程序</li>
+</ul>
+</li>
+<li>Python不支持c语言中自加(++n)或自减操作，如果在Python中执行(--n)操作，则python会将语句解释为-(-n)从而得到n，++n也同理。</li>
+</ul>
+<h5 id="类"><a href="#类" class="headerlink" title="类"></a>类</h5><ul>
+<li>定义类</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span><span class="params">(base_class[es])</span>:</span></div><div class="line"><span class="string">"optional documentation string"</span></div><div class="line">static_member_declarations</div><div class="line">method_declarations</div></pre></td></tr></table></figure>
+<p>当没有可选的基类时，可以选object作为基类，class行之后是可选的文档字符串、静态成员定义及方法定义</p>
+<h5 id="python中小知识点"><a href="#python中小知识点" class="headerlink" title="python中小知识点"></a>python中小知识点</h5><ul>
+<li>python对象的三个属性：id、type、value</li>
+<li>python中数字、字符串、元组不可更改（指的是当重新赋值时，id会改变，也就是会先生成新的对象，然后指向它），列表和字典可以更改</li>
+<li>is根据id来判断是否相同，==根据value来判断是否相同</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      Python学习笔记-第一天
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="Python学习笔记" scheme="http://yoursite.com/tags/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 函数</title>
+    <link href="http://yoursite.com/2016/08/14/Python-%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2016/08/14/Python-函数/</id>
+    <published>2016-08-14T06:45:32.000Z</published>
+    <updated>2016-09-03T04:49:08.483Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Python函数"><a href="#Python函数" class="headerlink" title="Python函数"></a>Python函数</h4><ul>
+<li>函数代码块以def开头，后接函数标识符名称和圆括号()</li>
+<li>任何传入参数和自变量必须放在圆括号中间</li>
+<li>函数第一行语句可以选择性的使用文档字符串，用于函数说明</li>
+<li>函数内容以冒号起始，并且缩进</li>
+<li>return[表达式]结束函数，不带表达式的return相当于返回None</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">function_name</span><span class="params">( parameters )</span>:</span></div><div class="line">	<span class="string">"函数_文档字符串"</span></div><div class="line">    function_suit</div><div class="line">    <span class="keyword">return</span> [expression]</div></pre></td></tr></table></figure>
+<p>例如，打印字符串：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">toString</span><span class="params">(str)</span>:</span></div><div class="line">	<span class="string">"print str"</span></div><div class="line">	<span class="keyword">print</span> str</div><div class="line">	<span class="keyword">return</span></div><div class="line">	</div><div class="line">toString(<span class="string">"abcdefg"</span>)</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abcdefg</div></pre></td></tr></table></figure></p>
+<h6 id="Python函数按值传递参数和按引用传递参数"><a href="#Python函数按值传递参数和按引用传递参数" class="headerlink" title="Python函数按值传递参数和按引用传递参数"></a>Python函数按值传递参数和按引用传递参数</h6><ul>
+<li>在Python中，所有的参数传递都是按引用传递，如果在函数中修改了参数，那么原始参数也就变了，例如：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">change</span><span class="params">( dict )</span>:</span></div><div class="line">	<span class="string">"change dic"</span></div><div class="line">	<span class="comment">#append a key and value</span></div><div class="line">	dict[<span class="string">'aa'</span>] = <span class="number">33</span></div><div class="line">	<span class="keyword">print</span> dict</div><div class="line">	<span class="keyword">return</span></div><div class="line"></div><div class="line">dict = &#123;<span class="string">'liming'</span>: <span class="number">23</span>, <span class="string">'dani'</span>: <span class="number">24</span>&#125;</div><div class="line">change(dict)</div><div class="line"><span class="keyword">print</span> dict</div></pre></td></tr></table></figure>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="string">'liming'</span>: <span class="number">23</span>, <span class="string">'aa'</span>: <span class="number">33</span>, <span class="string">'dani'</span>: <span class="number">24</span>&#125;</div><div class="line">&#123;<span class="string">'liming'</span>: <span class="number">23</span>, <span class="string">'aa'</span>: <span class="number">33</span>, <span class="string">'dani'</span>: <span class="number">24</span>&#125;</div></pre></td></tr></table></figure></p>
+<h6 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h6><ul>
+<li>加了*的变量名用来存放所有未命名的参数，例如：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">VarPar</span><span class="params">(*a)</span>:</span></div><div class="line">	<span class="string">"print a"</span></div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> a:</div><div class="line">		<span class="keyword">print</span> i</div><div class="line">	<span class="keyword">return</span></div><div class="line">	</div><div class="line">VarPar(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)</div><div class="line">VarPar(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</div><div class="line">VarPar()</div></pre></td></tr></table></figure>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">b</div><div class="line">c</div><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure></p>
+<h5 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h5><ul>
+<li>python用lambda来创建匿名函数</li>
+<li>lambda只是一个表达式，函数体比def简单的多</li>
+<li>lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去</li>
+<li>lambda函数拥有自己的命名空间，且不能访问自有参数列表以外或全局命名空间里的参数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">lambda</span> 参数：表达式</div></pre></td></tr></table></figure>
+<p>例子：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sum = <span class="keyword">lambda</span> a1,a2: a1+a2</div><div class="line"></div><div class="line"><span class="keyword">print</span> sum(<span class="number">2</span>,<span class="number">3</span>)</div></pre></td></tr></table></figure></p>
+<p>输出为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      Python函数学习
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="python 函数" scheme="http://yoursite.com/tags/python-%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 文件与命令查询</title>
+    <link href="http://yoursite.com/2016/08/14/Linux-%E6%96%87%E4%BB%B6%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%9F%A5%E8%AF%A2/"/>
+    <id>http://yoursite.com/2016/08/14/Linux-文件与命令查询/</id>
+    <published>2016-08-14T03:41:38.000Z</published>
+    <updated>2016-09-03T04:48:47.069Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="Linux中文件与命令的查询"><a href="#Linux中文件与命令的查询" class="headerlink" title="Linux中文件与命令的查询"></a>Linux中文件与命令的查询</h4><ul>
+<li>which<ul>
+<li>which -a ：将所有PATH目录中可以找到的命令均列出来，（如果没有-a选项，只列出找到的第一个）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[zz<span class="meta">@VM</span>_60_195_centos ~]$ which python</div><div class="line">/usr/bin/python</div></pre></td></tr></table></figure>
+<ul>
+<li>当在PATH目录中找不到时，会有如下提示</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">which a</div><div class="line">/usr/bin/which: <span class="function">no a <span class="title">in</span> <span class="params">(/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/zz/.local/bin:/home/zz/bin)</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>whereis<ul>
+<li>whereis -b：只找二进制格式的文件</li>
+<li>whereis -m：只找在说明文件manual路径下的文件</li>
+<li>whereis -s：只找source源文件</li>
+<li>whereis -u：查找不再上述三个选项中的其他特殊文件</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[zz<span class="meta">@VM</span>_60_195_centos ~]$ whereis ifconfig</div><div class="line">ifconfig: /usr/sbin/ifconfig /usr/share/man/man8/ifconfig.8.gz</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#只找出和passwd有关的”说明文件“文件名（man page）</span></div><div class="line">[zz@VM_60_195_centos ~]$ whereis -m passwd</div><div class="line">passwd: /usr/share/man/man1/passwd<span class="number">.1</span>.gz</div></pre></td></tr></table></figure>
+<ul>
+<li>locate <ul>
+<li>locate -i：忽略大小写的差异</li>
+<li>locate -r：后面可以接正则表达式的显示方式</li>
+</ul>
+</li>
+<li>find<ul>
+<li>查找在某个目录下属于某个用户的文件,例如在/home下查找属于tom的文件<br><code>find /home -user tom</code></li>
+<li>按文件名查找，例如可以在/目录下查找passwd这个文件<br><code>find / -name passwd</code></li>
+</ul>
+</li>
+<li>find的查找速度要比whereis和locate要慢，因为whereis和locate是在数据库中查找（/var/lib/mlocate）,而find是在硬盘中查找，所以速度较慢。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      Linux中查找文件与命令的路径
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="命令与文件查询" scheme="http://yoursite.com/tags/%E5%91%BD%E4%BB%A4%E4%B8%8E%E6%96%87%E4%BB%B6%E6%9F%A5%E8%AF%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>touch 之修改文件时间</title>
     <link href="http://yoursite.com/2016/08/14/touch-%E4%B9%8B%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%97%B6%E9%97%B4/"/>
     <id>http://yoursite.com/2016/08/14/touch-之修改文件时间/</id>
