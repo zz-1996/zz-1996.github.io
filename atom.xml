@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-03T04:09:15.362Z</updated>
+  <updated>2016-09-18T14:06:07.023Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LAMP之编译安装mysql</title>
+    <link href="http://yoursite.com/2016/09/18/LAMP%E4%B9%8B%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85mysql/"/>
+    <id>http://yoursite.com/2016/09/18/LAMP之编译安装mysql/</id>
+    <published>2016-09-18T11:38:52.000Z</published>
+    <updated>2016-09-18T14:06:07.023Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="LAMP之编译安装mysql"><a href="#LAMP之编译安装mysql" class="headerlink" title="LAMP之编译安装mysql"></a>LAMP之编译安装mysql</h4><ul>
+<li>下载mysql的通用二进制文件格式安装包</li>
+<li>解压到/usr/local/mysql下，官方要求，可以通过以下代码实现</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tar xf mysql-5.6.12-linux-glibc2.5-x86_64.tar.gz -C /usr/local</div><div class="line">cd /usr/local</div><div class="line">ln -s mysql-5.6.12-linux-glibc2.5-x86_64 mysql</div></pre></td></tr></table></figure>
+<ul>
+<li>创建链接文件可以通过mysql和mysql-5.6.12-linux-glibc2.5-x86_64来访问，同时也保留了mysql的版本信息</li>
+<li>通过查看mysql下的INSTALL-BINARY文件，<code>less INSTALL-BINARY</code>查看安装步骤</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/mysql</div><div class="line">groupadd -r -g 306 mysql</div><div class="line">useradd -g 306 -r -g 306 mysql   #创建mysql用户和mysql组</div><div class="line">chown -R mysql.mysql .      #将当前目录下的所有文件改为mysql组，mysql用户</div><div class="line"># 然后执行脚本，先通过--help选项查看帮助</div><div class="line">scripts/mysql_install_db --help</div><div class="line"># 如果出现错误</div><div class="line">./mysql_install_db --help</div><div class="line">Can&apos;t locate Data/Dumper.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at ./mysql_install_db line 42.</div><div class="line">BEGIN failed--compilation aborted at ./mysql_install_db line 42.</div><div class="line"># 执行yum -y install &apos;perl(Data::Dumper)&apos;</div><div class="line"># datadir参数用来设置mysql的数据存放的路径，一般新建一个物理卷</div><div class="line">scripts/mysql_install_db --user=mysql --datadir=/mydata/data</div><div class="line"># 将全部文件的属主改为root，为了安全</div><div class="line">chown -R root .</div><div class="line"># 将mysql的服务复制到/etc/init.d目录下</div><div class="line">cp support-files/mysql.server /etc/init.d/mysqld</div><div class="line">chkconfig --add mysqld</div><div class="line"># 复制配置文件</div><div class="line">cp support-files/my-default.cnf /etc/my.cnf</div><div class="line">#更改my.cnf中的几项</div><div class="line"># datadir = /mydata/data</div><div class="line"># port = 3306</div><div class="line"># socket = /tmp/mysql.sock</div><div class="line"></div><div class="line"># 之后就可以启动mysql服务器</div><div class="line">systemctl start mysqld</div><div class="line"></div><div class="line">#编译安装完成mysql服务器后，会顺便安装mysql客户端，在/usr/local/mysql/bin/目录下，所以可以将这个目录添加到环境变量中</div><div class="line">vim /etc/profile.d/mysql.sh</div><div class="line">#在这个文件中添加一行 `export PATH=$PATH:/usr/local/mysql/bin`</div><div class="line"></div><div class="line"># 然后就可以用本地mysql客户端连接mysql服务器</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      LAMP之编译安装mysql
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="LAMP" scheme="http://yoursite.com/tags/LAMP/"/>
+    
+      <category term="CentOs" scheme="http://yoursite.com/tags/CentOs/"/>
+    
+      <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LAMP之编译安装apache</title>
+    <link href="http://yoursite.com/2016/09/18/LAMP%E4%B9%8B%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85apache/"/>
+    <id>http://yoursite.com/2016/09/18/LAMP之编译安装apache/</id>
+    <published>2016-09-18T11:38:36.000Z</published>
+    <updated>2016-09-18T13:11:55.293Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="LAMP之编译安装apache"><a href="#LAMP之编译安装apache" class="headerlink" title="LAMP之编译安装apache"></a>LAMP之编译安装apache</h4><ul>
+<li>apache的安装分为三步<ul>
+<li>第一步，安装apr（以1.5.2为例）</li>
+<li>第二步，安装apr-util（以1.5.4为例）</li>
+<li>第三步，安装httpd（以2.4.23为例）</li>
+</ul>
+</li>
+<li>apache安装之apr（Apache portable Run-time libraries，Apache可移植运行库）<ul>
+<li>apr就是为了在不同的操作系统上都可以用apache服务提供的统一操作函数接口</li>
+<li>首先在apache官网下载apr</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tar xf apr-1.5.2.tar.bz2</div><div class="line">cd apr-1.5.2/</div><div class="line">./configure --prefix=/usr/local/apr</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<ul>
+<li>apache安装之apr-util<ul>
+<li>在apache官网下载apr-util</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tar xf apr-util-1.5.4</div><div class="line">cd apr-util-1.5.4/</div><div class="line">./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr #要指定apr的路径</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<ul>
+<li>apache安装之httpd<ul>
+<li>在apache官网下载httpd</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">yum -y insatll pcre-devel  # 安装httpd服务的依赖包</div><div class="line">yum install openssl-devel  # 安装httpd服务的依赖包</div><div class="line">tar xf httpd-2.4.23.tar.bz2</div><div class="line">cd httpd-2.4.23/</div><div class="line">./configure --prefix=/usr/local/apache --sysconfdir=/etc/httpd --enable-so --enable-ssl --enable-cgi --enable-rewrite --with-zlib --with-pcre --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util --enable-mpms-shared=all --with-mpm=event</div><div class="line"> # 其中--sysconfdir=/etc/httpd是apache服务的配置文件放置目录</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<ul>
+<li>在/usr/local/apache/bin下的apachectl可以开启httpd服务，可以执行./apachectl start</li>
+<li>启动之后会发现httpd.pid文件存放在logs目录下，要更改httpd.pid文件的存放路径，需修改配置文件，在配置文件（/etc/httpd/httpd.conf）中添加一行，<code>PidFile &quot;/var/run/httpd.pid&quot;</code></li>
+<li>添加启动脚本<code>vim /etc/init.d/httpd</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#</div><div class="line"># httpd        Startup script for the Apache HTTP Server</div><div class="line">#</div><div class="line"># chkconfig: - 85 15</div><div class="line"># description: Apache is a World Wide Web server.  It is used to serve \</div><div class="line">#	       HTML files and CGI.</div><div class="line"># processname: httpd</div><div class="line"># config: /etc/httpd/conf/httpd.conf</div><div class="line"># config: /etc/sysconfig/httpd</div><div class="line"># pidfile: /var/run/httpd.pid</div><div class="line"></div><div class="line"># Source function library.</div><div class="line">. /etc/rc.d/init.d/functions</div><div class="line"></div><div class="line">if [ -f /etc/sysconfig/httpd ]; then</div><div class="line">        . /etc/sysconfig/httpd</div><div class="line">fi</div><div class="line"></div><div class="line"># Start httpd in the C locale by default.</div><div class="line">HTTPD_LANG=$&#123;HTTPD_LANG-&quot;C&quot;&#125;</div><div class="line"></div><div class="line"># This will prevent initlog from swallowing up a pass-phrase prompt if</div><div class="line"># mod_ssl needs a pass-phrase from the user.</div><div class="line">INITLOG_ARGS=&quot;&quot;</div><div class="line"></div><div class="line"># Set HTTPD=/usr/sbin/httpd.worker in /etc/sysconfig/httpd to use a server</div><div class="line"># with the thread-based &quot;worker&quot; MPM; BE WARNED that some modules may not</div><div class="line"># work correctly with a thread-based MPM; notably PHP will refuse to start.</div><div class="line"></div><div class="line"># Path to the apachectl script, server binary, and short-form for messages.</div><div class="line">apachectl=/usr/local/apache/bin/apachectl</div><div class="line">httpd=$&#123;HTTPD-/usr/local/apache/bin/httpd&#125;</div><div class="line">prog=httpd</div><div class="line">pidfile=$&#123;PIDFILE-/var/run/httpd.pid&#125;</div><div class="line">lockfile=$&#123;LOCKFILE-/var/lock/subsys/httpd&#125;</div><div class="line">RETVAL=0</div><div class="line"></div><div class="line">start() &#123;</div><div class="line">        echo -n $&quot;Starting $prog: &quot;</div><div class="line">        LANG=$HTTPD_LANG daemon --pidfile=$&#123;pidfile&#125; $httpd $OPTIONS</div><div class="line">        RETVAL=$?</div><div class="line">        echo</div><div class="line">        [ $RETVAL = 0 ] &amp;&amp; touch $&#123;lockfile&#125;</div><div class="line">        return $RETVAL</div><div class="line">&#125;</div><div class="line"></div><div class="line">stop() &#123;</div><div class="line">	echo -n $&quot;Stopping $prog: &quot;</div><div class="line">	killproc -p $&#123;pidfile&#125; -d 10 $httpd</div><div class="line">	RETVAL=$?</div><div class="line">	echo</div><div class="line">	[ $RETVAL = 0 ] &amp;&amp; rm -f $&#123;lockfile&#125; $&#123;pidfile&#125;</div><div class="line">&#125;</div><div class="line">reload() &#123;</div><div class="line">    echo -n $&quot;Reloading $prog: &quot;</div><div class="line">    if ! LANG=$HTTPD_LANG $httpd $OPTIONS -t &gt;&amp;/dev/null; then</div><div class="line">        RETVAL=$?</div><div class="line">        echo $&quot;not reloading due to configuration syntax error&quot;</div><div class="line">        failure $&quot;not reloading $httpd due to configuration syntax error&quot;</div><div class="line">    else</div><div class="line">        killproc -p $&#123;pidfile&#125; $httpd -HUP</div><div class="line">        RETVAL=$?</div><div class="line">    fi</div><div class="line">    echo</div><div class="line">&#125;</div><div class="line"></div><div class="line"># See how we were called.</div><div class="line">case &quot;$1&quot; in</div><div class="line">  start)</div><div class="line">	start</div><div class="line">	;;</div><div class="line">  stop)</div><div class="line">	stop</div><div class="line">	;;</div><div class="line">  status)</div><div class="line">        status -p $&#123;pidfile&#125; $httpd</div><div class="line">	RETVAL=$?</div><div class="line">	;;</div><div class="line">  restart)</div><div class="line">	stop</div><div class="line">	start</div><div class="line">	;;</div><div class="line">  condrestart)</div><div class="line">	if [ -f $&#123;pidfile&#125; ] ; then</div><div class="line">		stop</div><div class="line">		start</div><div class="line">	fi</div><div class="line">	;;</div><div class="line">  reload)</div><div class="line">        reload</div><div class="line">	;;</div><div class="line">  graceful|help|configtest|fullstatus)</div><div class="line">	$apachectl $@</div><div class="line">	RETVAL=$?</div><div class="line">	;;</div><div class="line">  *)</div><div class="line">	echo $&quot;Usage: $prog &#123;start|stop|restart|condrestart|reload|status|fullstatus|graceful|help|configtest&#125;&quot;</div><div class="line">	exit 1</div><div class="line">esac</div><div class="line"></div><div class="line">exit $RETVAL</div></pre></td></tr></table></figure>
+<ul>
+<li>然后为脚本添加执行权限<code>chmod +x /etc/init.d/httpd</code></li>
+<li>为httpd添加系统服务<code>chkconfig --add httpd</code></li>
+<li>启动httpd服务<code>systemctl start httpd</code></li>
+<li>最后查看网络状态，看是否启动成功<code>netstat -tunlp</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      LAMP之编译安装apache
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+      <category term="LAMP" scheme="http://yoursite.com/tags/LAMP/"/>
+    
+      <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
+    
+      <category term="CentOs" scheme="http://yoursite.com/tags/CentOs/"/>
+    
+  </entry>
   
   <entry>
     <title>centos 编译安装github</title>

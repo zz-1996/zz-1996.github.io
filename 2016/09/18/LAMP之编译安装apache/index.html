@@ -1,0 +1,439 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="zhao">
+  
+  
+  
+  
+    <meta name="description" content="LAMP之编译安装apache">
+  
+  <title>LAMP之编译安装apache [ For Light's Blog ]</title>
+  
+    <link rel="alternate" href="/atom.xml" title="For Light's Blog">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2016/09/18/LAMP之编译安装mysql/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        LAMP之编译安装mysql
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2016/09/03/centos-编译安装github/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        centos 编译安装github
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src=""/>
+          <div id="homelink">For Light's Blog</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">Home</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/zz-1996">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>LAMP之编译安装apache</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2016-09-18</span>
+      
+        <span id = "post-title-updated">Updated at 2016-09-18</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/Linux/">Linux</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/Linux/">Linux</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/LAMP/">LAMP</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/apache/">apache</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/CentOs/">CentOs</a>
+      
+      </span>
+      
+    </p>
+    
+    <h4 id="LAMP之编译安装apache"><a href="#LAMP之编译安装apache" class="headerlink" title="LAMP之编译安装apache"></a>LAMP之编译安装apache</h4><ul>
+<li>apache的安装分为三步<ul>
+<li>第一步，安装apr（以1.5.2为例）</li>
+<li>第二步，安装apr-util（以1.5.4为例）</li>
+<li>第三步，安装httpd（以2.4.23为例）</li>
+</ul>
+</li>
+<li>apache安装之apr（Apache portable Run-time libraries，Apache可移植运行库）<ul>
+<li>apr就是为了在不同的操作系统上都可以用apache服务提供的统一操作函数接口</li>
+<li>首先在apache官网下载apr</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tar xf apr-1.5.2.tar.bz2</div><div class="line">cd apr-1.5.2/</div><div class="line">./configure --prefix=/usr/local/apr</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<ul>
+<li>apache安装之apr-util<ul>
+<li>在apache官网下载apr-util</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tar xf apr-util-1.5.4</div><div class="line">cd apr-util-1.5.4/</div><div class="line">./configure --prefix=/usr/local/apr-util --with-apr=/usr/local/apr #要指定apr的路径</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<ul>
+<li>apache安装之httpd<ul>
+<li>在apache官网下载httpd</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">yum -y insatll pcre-devel  # 安装httpd服务的依赖包</div><div class="line">yum install openssl-devel  # 安装httpd服务的依赖包</div><div class="line">tar xf httpd-2.4.23.tar.bz2</div><div class="line">cd httpd-2.4.23/</div><div class="line">./configure --prefix=/usr/local/apache --sysconfdir=/etc/httpd --enable-so --enable-ssl --enable-cgi --enable-rewrite --with-zlib --with-pcre --with-apr=/usr/local/apr --with-apr-util=/usr/local/apr-util --enable-mpms-shared=all --with-mpm=event</div><div class="line"> # 其中--sysconfdir=/etc/httpd是apache服务的配置文件放置目录</div><div class="line">make</div><div class="line">make install</div></pre></td></tr></table></figure>
+<ul>
+<li>在/usr/local/apache/bin下的apachectl可以开启httpd服务，可以执行./apachectl start</li>
+<li>启动之后会发现httpd.pid文件存放在logs目录下，要更改httpd.pid文件的存放路径，需修改配置文件，在配置文件（/etc/httpd/httpd.conf）中添加一行，<code>PidFile &quot;/var/run/httpd.pid&quot;</code></li>
+<li>添加启动脚本<code>vim /etc/init.d/httpd</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line">#</div><div class="line"># httpd        Startup script for the Apache HTTP Server</div><div class="line">#</div><div class="line"># chkconfig: - 85 15</div><div class="line"># description: Apache is a World Wide Web server.  It is used to serve \</div><div class="line">#	       HTML files and CGI.</div><div class="line"># processname: httpd</div><div class="line"># config: /etc/httpd/conf/httpd.conf</div><div class="line"># config: /etc/sysconfig/httpd</div><div class="line"># pidfile: /var/run/httpd.pid</div><div class="line"></div><div class="line"># Source function library.</div><div class="line">. /etc/rc.d/init.d/functions</div><div class="line"></div><div class="line">if [ -f /etc/sysconfig/httpd ]; then</div><div class="line">        . /etc/sysconfig/httpd</div><div class="line">fi</div><div class="line"></div><div class="line"># Start httpd in the C locale by default.</div><div class="line">HTTPD_LANG=$&#123;HTTPD_LANG-&quot;C&quot;&#125;</div><div class="line"></div><div class="line"># This will prevent initlog from swallowing up a pass-phrase prompt if</div><div class="line"># mod_ssl needs a pass-phrase from the user.</div><div class="line">INITLOG_ARGS=&quot;&quot;</div><div class="line"></div><div class="line"># Set HTTPD=/usr/sbin/httpd.worker in /etc/sysconfig/httpd to use a server</div><div class="line"># with the thread-based &quot;worker&quot; MPM; BE WARNED that some modules may not</div><div class="line"># work correctly with a thread-based MPM; notably PHP will refuse to start.</div><div class="line"></div><div class="line"># Path to the apachectl script, server binary, and short-form for messages.</div><div class="line">apachectl=/usr/local/apache/bin/apachectl</div><div class="line">httpd=$&#123;HTTPD-/usr/local/apache/bin/httpd&#125;</div><div class="line">prog=httpd</div><div class="line">pidfile=$&#123;PIDFILE-/var/run/httpd.pid&#125;</div><div class="line">lockfile=$&#123;LOCKFILE-/var/lock/subsys/httpd&#125;</div><div class="line">RETVAL=0</div><div class="line"></div><div class="line">start() &#123;</div><div class="line">        echo -n $&quot;Starting $prog: &quot;</div><div class="line">        LANG=$HTTPD_LANG daemon --pidfile=$&#123;pidfile&#125; $httpd $OPTIONS</div><div class="line">        RETVAL=$?</div><div class="line">        echo</div><div class="line">        [ $RETVAL = 0 ] &amp;&amp; touch $&#123;lockfile&#125;</div><div class="line">        return $RETVAL</div><div class="line">&#125;</div><div class="line"></div><div class="line">stop() &#123;</div><div class="line">	echo -n $&quot;Stopping $prog: &quot;</div><div class="line">	killproc -p $&#123;pidfile&#125; -d 10 $httpd</div><div class="line">	RETVAL=$?</div><div class="line">	echo</div><div class="line">	[ $RETVAL = 0 ] &amp;&amp; rm -f $&#123;lockfile&#125; $&#123;pidfile&#125;</div><div class="line">&#125;</div><div class="line">reload() &#123;</div><div class="line">    echo -n $&quot;Reloading $prog: &quot;</div><div class="line">    if ! LANG=$HTTPD_LANG $httpd $OPTIONS -t &gt;&amp;/dev/null; then</div><div class="line">        RETVAL=$?</div><div class="line">        echo $&quot;not reloading due to configuration syntax error&quot;</div><div class="line">        failure $&quot;not reloading $httpd due to configuration syntax error&quot;</div><div class="line">    else</div><div class="line">        killproc -p $&#123;pidfile&#125; $httpd -HUP</div><div class="line">        RETVAL=$?</div><div class="line">    fi</div><div class="line">    echo</div><div class="line">&#125;</div><div class="line"></div><div class="line"># See how we were called.</div><div class="line">case &quot;$1&quot; in</div><div class="line">  start)</div><div class="line">	start</div><div class="line">	;;</div><div class="line">  stop)</div><div class="line">	stop</div><div class="line">	;;</div><div class="line">  status)</div><div class="line">        status -p $&#123;pidfile&#125; $httpd</div><div class="line">	RETVAL=$?</div><div class="line">	;;</div><div class="line">  restart)</div><div class="line">	stop</div><div class="line">	start</div><div class="line">	;;</div><div class="line">  condrestart)</div><div class="line">	if [ -f $&#123;pidfile&#125; ] ; then</div><div class="line">		stop</div><div class="line">		start</div><div class="line">	fi</div><div class="line">	;;</div><div class="line">  reload)</div><div class="line">        reload</div><div class="line">	;;</div><div class="line">  graceful|help|configtest|fullstatus)</div><div class="line">	$apachectl $@</div><div class="line">	RETVAL=$?</div><div class="line">	;;</div><div class="line">  *)</div><div class="line">	echo $&quot;Usage: $prog &#123;start|stop|restart|condrestart|reload|status|fullstatus|graceful|help|configtest&#125;&quot;</div><div class="line">	exit 1</div><div class="line">esac</div><div class="line"></div><div class="line">exit $RETVAL</div></pre></td></tr></table></figure>
+<ul>
+<li>然后为脚本添加执行权限<code>chmod +x /etc/init.d/httpd</code></li>
+<li>为httpd添加系统服务<code>chkconfig --add httpd</code></li>
+<li>启动httpd服务<code>systemctl start httpd</code></li>
+<li>最后查看网络状态，看是否启动成功<code>netstat -tunlp</code></li>
+</ul>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#LAMP之编译安装apache"><span class="toc-text">LAMP之编译安装apache</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2016/09/18/LAMP之编译安装mysql/" class="prev">&larr; Prev post LAMP之编译安装mysql</a>
+  
+
+  
+
+  
+    <a href="/2016/09/03/centos-编译安装github/" class="next">Next post centos 编译安装github &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by zhao using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="">
+    <p id="description"></p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/zz-1996">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://coding.net">
+        
+          <i class="icon iconfont coding">&#xe607;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://twitter.com">
+        
+          <i class="icon iconfont twitter">&#xe600;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com">
+        
+          <i class="icon iconfont douban">&#xe609;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_2.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_3.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_4.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_5.jpg?imageView2/1/w/__width__/h/__height__');
+    
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "D7CCC8";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

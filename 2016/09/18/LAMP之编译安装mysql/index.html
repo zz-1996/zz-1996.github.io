@@ -1,8 +1,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,9 @@
   
   
   
-    <meta name="description" content="">
+    <meta name="description" content="LAMP之编译安装mysql">
   
-  <title>Tag: 命令与文件查询 [ For Light's Blog ]</title>
+  <title>LAMP之编译安装mysql [ For Light's Blog ]</title>
   
     <link rel="alternate" href="/atom.xml" title="For Light's Blog">
   
@@ -41,6 +39,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2016/09/18/LAMP之编译安装apache/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        LAMP之编译安装apache
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -73,7 +80,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/tags">Tags</a>
             
@@ -112,167 +119,89 @@
     <div id="content-inner">
       
       
-  <div id="tag">
-    <h1>命令与文件查询</h1>
+  <article id="post">
+    <h1>LAMP之编译安装mysql</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2016-09-18</span>
+      
+        <span id = "post-title-updated">Updated at 2016-09-18</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/Linux/">Linux</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/Linux/">Linux</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/LAMP/">LAMP</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/CentOs/">CentOs</a>
+      
+        
+          /
+        
+        
+        <a href="/tags/mysql/">mysql</a>
+      
+      </span>
+      
+    </p>
     
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2016/08/14/Linux-文件与命令查询/">
-  
-    Linux 文件与命令查询
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">8-14</span>
-    
-    <span id = "post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/Linux/">Linux</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    Tag
-    
-    
-      
-      
-      <a href="/tags/Linux/">Linux</a>
-    
-      
-        /
-      
-      
-      <a href="/tags/命令与文件查询/">命令与文件查询</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-      
-    
-      
-      
-        
-      
-        
-      
-        
-      
-      
-    
+    <h4 id="LAMP之编译安装mysql"><a href="#LAMP之编译安装mysql" class="headerlink" title="LAMP之编译安装mysql"></a>LAMP之编译安装mysql</h4><ul>
+<li>下载mysql的通用二进制文件格式安装包</li>
+<li>解压到/usr/local/mysql下，官方要求，可以通过以下代码实现</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">tar xf mysql-5.6.12-linux-glibc2.5-x86_64.tar.gz -C /usr/local</div><div class="line">cd /usr/local</div><div class="line">ln -s mysql-5.6.12-linux-glibc2.5-x86_64 mysql</div></pre></td></tr></table></figure>
+<ul>
+<li>创建链接文件可以通过mysql和mysql-5.6.12-linux-glibc2.5-x86_64来访问，同时也保留了mysql的版本信息</li>
+<li>通过查看mysql下的INSTALL-BINARY文件，<code>less INSTALL-BINARY</code>查看安装步骤</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">cd /usr/local/mysql</div><div class="line">groupadd -r -g 306 mysql</div><div class="line">useradd -g 306 -r -g 306 mysql   #创建mysql用户和mysql组</div><div class="line">chown -R mysql.mysql .      #将当前目录下的所有文件改为mysql组，mysql用户</div><div class="line"># 然后执行脚本，先通过--help选项查看帮助</div><div class="line">scripts/mysql_install_db --help</div><div class="line"># 如果出现错误</div><div class="line">./mysql_install_db --help</div><div class="line">Can&apos;t locate Data/Dumper.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at ./mysql_install_db line 42.</div><div class="line">BEGIN failed--compilation aborted at ./mysql_install_db line 42.</div><div class="line"># 执行yum -y install &apos;perl(Data::Dumper)&apos;</div><div class="line"># datadir参数用来设置mysql的数据存放的路径，一般新建一个物理卷</div><div class="line">scripts/mysql_install_db --user=mysql --datadir=/mydata/data</div><div class="line"># 将全部文件的属主改为root，为了安全</div><div class="line">chown -R root .</div><div class="line"># 将mysql的服务复制到/etc/init.d目录下</div><div class="line">cp support-files/mysql.server /etc/init.d/mysqld</div><div class="line">chkconfig --add mysqld</div><div class="line"># 复制配置文件</div><div class="line">cp support-files/my-default.cnf /etc/my.cnf</div><div class="line">#更改my.cnf中的几项</div><div class="line"># datadir = /mydata/data</div><div class="line"># port = 3306</div><div class="line"># socket = /tmp/mysql.sock</div><div class="line"></div><div class="line"># 之后就可以启动mysql服务器</div><div class="line">systemctl start mysqld</div><div class="line"></div><div class="line">#编译安装完成mysql服务器后，会顺便安装mysql客户端，在/usr/local/mysql/bin/目录下，所以可以将这个目录添加到环境变量中</div><div class="line">vim /etc/profile.d/mysql.sh</div><div class="line">#在这个文件中添加一行 `export PATH=$PATH:/usr/local/mysql/bin`</div><div class="line"></div><div class="line"># 然后就可以用本地mysql客户端连接mysql服务器</div></pre></td></tr></table></figure>
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#LAMP之编译安装mysql"><span class="toc-text">LAMP之编译安装mysql</span></a></li></ol>
   </div>
+</div>
 
   
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2016/09/18/LAMP之编译安装apache/" class="next">Next post LAMP之编译安装apache &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -420,6 +349,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "D7CCC8";
